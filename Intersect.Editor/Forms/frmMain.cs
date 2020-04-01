@@ -1737,6 +1737,16 @@ namespace Intersect.Editor.Forms
             Globals.PackingProgressForm.NotifyClose();
         }
 
-    }
+		private void toolStripRndPlace_Click(object sender, EventArgs e)
+		{
+			if (Globals.CurrentTool != (int)EditingTool.Pen)
+			{
+				return;
+			}
+			Globals.CurrentEditor = (int)GameObjectType.Mimus_RandomPlacer;
+			FormRandomPlacer formRandomPlacer = new FormRandomPlacer();
+			formRandomPlacer.Show();
+		}
+	}
 
 }
